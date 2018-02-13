@@ -9,8 +9,7 @@ public class GameContainer {
 	private ArrayList<ArticleContainer> articles = new ArrayList<ArticleContainer>();
 	
 	public GameContainer(String title, String rating) {
-			this.rating = Integer.parseInt(rating);
-			this.rating = 0;
+		this.rating = Integer.parseInt(rating);
 		this.title = title;	
 	}
 	

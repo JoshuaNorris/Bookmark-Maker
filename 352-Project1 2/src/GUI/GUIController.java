@@ -17,7 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Modality;
@@ -206,11 +205,12 @@ public class GUIController {
 
 	public VBox getArticleVBox(ArticleContainer articleContainer, int num) throws IOException {
 		VBox article = new VBox();
+		Label articleLabel;
 		if (num == 1) {
-			Label articleLabel = new Label((num + 1) + ". " + articleContainer.getTitle()
+			articleLabel = new Label((num + 1) + ". " + articleContainer.getTitle()
 					+ "\nRating: " + articleContainer.getRating());
 		} else {
-			Label articleLabel = new Label(
+			articleLabel = new Label(
 					(num + 1) + ". " + articleContainer.getTitle() + "\nRating: " + articleContainer.getRating());
 		}
 
@@ -263,8 +263,9 @@ public class GUIController {
 
 	public void setDividers(int amountofgames) {
 		for (int x = 0; x <= amountofgames; x++) {
-			gameList.setDividerPosition(x, ((x) + 0.0) / ((amountofgames - 1) + 0.0));
+			gameList.setDividerPosition(x, ((x) + 1) / ((amountofgames) + 0.0));
 		}
+		gameList.setDividerPosition(amountofgames, ((amountofgames) + 1) / ((amountofgames) + 0.0));
 
 	}
 

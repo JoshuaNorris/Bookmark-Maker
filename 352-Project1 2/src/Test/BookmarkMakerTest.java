@@ -49,7 +49,7 @@ public class BookmarkMakerTest {
 		game1.addArticle(article3);
 		assertTrue(game1.getArticles().size() == 3);
 		game1.addArticle("galaga sux", "12", "this is another url");
-		assertTrue(game1.getArticles().size() == 3);
+		assertTrue(game1.getArticles().size() == 4);
 	}
 
 	@Test
@@ -57,13 +57,13 @@ public class BookmarkMakerTest {
 		ArticleContainer article1 = new ArticleContainer("I <3 Pac-Man", "7", "this is a url");
 		assertTrue(article1.getRating() == 7);
 		assertTrue(article1.getTitle().equals("I <3 Pac-Man"));
-		assertTrue(article1.getTitle().equals("this is a url"));
+		assertTrue(article1.getURL().equals("this is a url"));
 		article1.setRating("5");
 		article1.setTitle("Pac-Man suxks");
 		article1.setURL("yet another url");
 		assertTrue(article1.getRating() == 5);
 		assertTrue(article1.getTitle().equals("Pac-Man suxks"));
-		assertTrue(article1.getTitle().equals("yet another url"));
+		assertTrue(article1.getURL().equals("yet another url"));
 	}
 	
 }
